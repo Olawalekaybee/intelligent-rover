@@ -1,0 +1,16 @@
+#pragma once
+
+#define SERIAL_BAUD_RATE 115200
+
+#define DEVICE_NAME "Intelligent-Rover-AI-Camera"
+
+#define WIFI_CONNECT_TIMEOUT_MS 15000
+#define WIFI_RECONNECT_INTERVAL_MS 10000
+
+#define AI_EVENT_UART_BAUD_RATE 115200
+
+// XIAO ESP32-S3 UART pins to ESP32 main controller
+#define AI_UART_TX_PIN 43
+#define AI_UART_RX_PIN 44
+
+#define STATUS_LED_PIN LED_BUILTIN
