@@ -1,3 +1,10 @@
+---
+
+noteId: "7b49537252b411f1ba1fd724719d9058"
+tags: []
+
+---
+
 # Intelligent Rover  
 ### AI-Powered Environmental Monitoring, Edge Vision & Remote Inspection Platform
 
