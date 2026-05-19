@@ -1,14 +1,8 @@
----
+# Intelligent Rover
 
-noteId: "7b49537252b411f1ba1fd724719d9058"
-tags: []
+## AI-Powered Autonomous Inspection, Environmental Monitoring & Edge Vision Platform
 
----
-
-# Intelligent Rover  
-### AI-Powered Environmental Monitoring, Edge Vision & Remote Inspection Platform
-
-![Platform](https://img.shields.io/badge/platform-ESP32--S3-blue)
+![Platform](https://img.shields.io/badge/platform-ESP32%20%2B%20ESP32--S3-blue)
 ![Framework](https://img.shields.io/badge/framework-Arduino%20%2B%20FreeRTOS-green)
 ![IDE](https://img.shields.io/badge/IDE-VS%20Code-blue)
 ![Build](https://img.shields.io/badge/build-PlatformIO-orange)
@@ -19,31 +13,33 @@ tags: []
 
 # Overview
 
-**Intelligent Rover** is a professional-grade embedded robotics and IoT platform engineered for:
+**Intelligent Rover** is a professional embedded robotics and IoT platform engineered for:
 
-- Real-time environmental monitoring
-- Remote visual inspection
-- AI-powered object detection
-- Live video streaming
-- GPS telemetry acquisition
-- Cloud-connected sensor analytics
-- Bluetooth/gamepad-controlled mobility
-- OTA firmware lifecycle management
+* Autonomous and manual rover mobility
+* Real-time environmental monitoring
+* Edge AI object detection
+* Remote live video streaming
+* GPS telemetry acquisition
+* Cloud-connected analytics
+* Bluetooth/gamepad control
+* OTA firmware lifecycle management
+* Distributed embedded processing
 
-The system is built around a **dual ESP32-S3 architecture** consisting of:
+The platform combines:
 
-1. **ESP32-S3 Main Controller**
-2. **ESP32-S3 AI Camera Node**
+* **ESP32 Main Controller** for robotics, sensors, RTOS control, telemetry, and connectivity
+* **ESP32-S3 AI Camera Node** for edge AI inference and video streaming
 
-The platform is designed using modern embedded engineering practices including:
+The system is designed using modern embedded systems engineering principles:
 
-- Modular firmware architecture
-- RTOS-based task scheduling
-- Multi-node communication
-- Edge AI inference
-- Hardware abstraction
-- Structured telemetry pipelines
-- CI/CD-ready repository organization
+* RTOS task isolation
+* Modular firmware architecture
+* Hardware abstraction layers
+* Distributed node architecture
+* OTA-capable deployment
+* Structured telemetry pipelines
+* Scalable IoT integration
+* AI-ready edge processing
 
 ---
 
@@ -53,27 +49,28 @@ The platform is designed using modern embedded engineering practices including:
 ┌─────────────────────────────────────────────────────────────┐
 │                    REMOTE OPERATOR                         │
 │                                                             │
-│  • Browser-based video monitoring                           │
-│  • Telemetry observation                                    │
-│  • Bluetooth/Gamepad rover navigation                       │
+│  • Bluetooth/Gamepad Control                               │
+│  • Remote Video Monitoring                                 │
+│  • Telemetry Observation                                   │
+│  • Cloud Diagnostics                                       │
 └─────────────────────────┬───────────────────────────────────┘
                           │
-                Internet / Wi-Fi / Bluetooth
+                Internet / Wi‑Fi / Bluetooth
                           │
      ┌────────────────────┴────────────────────┐
      │                                         │
      ▼                                         ▼
 
 ┌──────────────────────┐          ┌─────────────────────────┐
-│ ESP32-S3 MAIN MCU    │          │ ESP32-S3 CAM AI NODE    │
+│ ESP32 MAIN MCU       │          │ ESP32-S3 AI CAMERA NODE │
 │──────────────────────│          │─────────────────────────│
 │ • Motor Control      │          │ • Live Video Streaming  │
-│ • Bluetooth Control  │          │ • AI Object Detection   │
-│ • Sensor Acquisition │          │ • Edge Inference        │
-│ • GPS Processing     │          │ • Detection Events      │
-│ • OTA Updates        │          │ • OTA Updates           │
-│ • ThingSpeak Upload  │          │ • Remote Streaming      │
-│ • RTOS Scheduling    │          │ • Frame Processing      │
+│ • Bluetooth Control  │          │ • Edge AI Inference     │
+│ • Sensor Acquisition │          │ • Object Detection      │
+│ • GPS Processing     │          │ • Frame Processing      │
+│ • OTA Updates        │          │ • Remote Streaming      │
+│ • ThingSpeak Upload  │          │ • OTA Updates           │
+│ • RTOS Scheduling    │          │ • AI Event Publishing   │
 └──────────┬───────────┘          └──────────┬──────────────┘
            │                                  │
            │                                  │
@@ -84,63 +81,82 @@ The platform is designed using modern embedded engineering practices including:
 
 ---
 
-# Technical Capabilities
+# Core Features
 
-## Mobility Subsystem
+## Rover Mobility System
 
-- 4WD differential drive platform
-- PWM-based motor speed control
-- Bluetooth/gamepad manual navigation
-- RTOS motor scheduling
-- High-current motor driver architecture
+* 4WD differential drive architecture
+* BTS7960 high-current motor driver control
+* PWM speed modulation
+* Bluetooth Classic gamepad/app control
+* Diagonal directional steering
+* RTOS-based motion scheduling
+* Command failsafe protection
+* Dynamic speed control
 
-### Supported Commands
+### Supported Motion Commands
 
-| Command | Function |
-|---|---|
-| F | Forward |
-| B | Reverse |
-| L | Turn Left |
-| R | Turn Right |
-| S | Stop |
-
----
-
-## Environmental Monitoring Subsystem
-
-### Supported Sensor Data
-
-| Sensor | Measurement |
-|---|---|
-| BME280 | Temperature |
-| BME280 | Humidity |
-| BME280 | Atmospheric Pressure |
-| MQ-135 | Air Quality / Gas Detection |
-| GPS | Latitude / Longitude |
-| GPS | Speed / Satellites |
+| Command | Action        |
+| ------- | ------------- |
+| F       | Forward       |
+| B       | Reverse       |
+| L       | Turn Left     |
+| R       | Turn Right    |
+| G       | Forward Left  |
+| I       | Forward Right |
+| H       | Reverse Left  |
+| J       | Reverse Right |
+| S       | Stop          |
 
 ---
 
-## AI Vision Subsystem
+# Environmental Monitoring System
 
-### AI Camera Features
+## Supported Sensors
 
-- Real-time MJPEG streaming
-- Edge-based object detection
-- Detection event publishing
-- Remote visual inspection
-- AI inference pipeline
-- OTA-capable AI node
+| Sensor     | Measurement                 |
+| ---------- | --------------------------- |
+| BME280     | Temperature                 |
+| BME280     | Humidity                    |
+| BME280     | Atmospheric Pressure        |
+| MQ135      | Air Quality / Gas Detection |
+| GPS Module | Latitude / Longitude        |
+| GPS Module | Speed / Satellites          |
 
-### Planned Detection Models
+### Telemetry Capabilities
 
-| Model Type | Status |
-|---|---|
-| Person Detection | Planned |
-| Vehicle Detection | Planned |
-| Animal Detection | Planned |
-| Fire/Smoke Detection | Future |
-| Hazard Detection | Future |
+* Real-time environmental sensing
+* Structured telemetry aggregation
+* Cloud telemetry upload
+* GPS tracking
+* Air quality monitoring
+* Expandable sensor architecture
+
+---
+
+# AI Vision Subsystem
+
+## ESP32-S3 AI Camera Node
+
+### Features
+
+* Real-time MJPEG video streaming
+* Edge AI object detection
+* Remote visual inspection
+* OTA firmware support
+* Frame acquisition pipeline
+* AI event publishing
+* Future autonomous assistance support
+
+### Planned AI Models
+
+| Model                  | Status  |
+| ---------------------- | ------- |
+| Person Detection       | Planned |
+| Vehicle Detection      | Planned |
+| Animal Detection       | Planned |
+| Fire / Smoke Detection | Future  |
+| Hazard Recognition     | Future  |
 
 ---
 
@@ -148,14 +164,15 @@ The platform is designed using modern embedded engineering practices including:
 
 ## Firmware Design Principles
 
-- Modular architecture
-- Non-blocking execution
-- RTOS task isolation
-- Thread-safe telemetry
-- Watchdog recovery
-- Hardware abstraction
-- OTA-capable deployment
-- Structured logging pipeline
+* Modular subsystem isolation
+* Non-blocking firmware execution
+* RTOS task scheduling
+* Dual-core ESP32 optimization
+* Structured telemetry handling
+* Hardware abstraction layers
+* OTA-capable deployment
+* Expandable architecture
+* Fault-tolerant control design
 
 ---
 
@@ -163,40 +180,39 @@ The platform is designed using modern embedded engineering practices including:
 
 ## Main Controller Tasks
 
-| Task | Priority | Description |
-|---|---|---|
-| TaskBluetoothControl | High | Receives movement commands |
-| TaskMotorControl | High | Controls drive system |
-| TaskSensorRead | Medium | Reads environmental sensors |
-| TaskGPSRead | Medium | Processes GPS telemetry |
-| TaskThingSpeakUpload | Low | Uploads cloud telemetry |
-| TaskOTAHandler | Low | Handles OTA updates |
-| TaskSystemHealth | Medium | Monitors runtime status |
+| Task                 | Priority | Description                  |
+| -------------------- | -------- | ---------------------------- |
+| TaskBluetoothControl | High     | Processes rover commands     |
+| TaskSensorRead       | Medium   | Reads environmental sensors  |
+| TaskGPSRead          | Medium   | Processes GPS telemetry      |
+| TaskStatusLED        | Low      | System heartbeat indicator   |
+| TaskThingSpeakUpload | Low      | Uploads cloud telemetry      |
+| TaskOTAHandler       | Low      | Handles OTA firmware updates |
 
 ---
 
 ## AI Camera Tasks
 
-| Task | Priority | Description |
-|---|---|---|
-| TaskFrameCapture | High | Captures camera frames |
-| TaskCameraStream | High | Streams video |
-| TaskAIInference | High | Performs object detection |
-| TaskEventPublisher | Medium | Publishes AI events |
-| TaskOTAHandler | Low | Handles OTA updates |
+| Task               | Priority | Description            |
+| ------------------ | -------- | ---------------------- |
+| TaskFrameCapture   | High     | Captures camera frames |
+| TaskCameraStream   | High     | Streams live video     |
+| TaskAIInference    | High     | Performs AI detection  |
+| TaskEventPublisher | Medium   | Publishes AI events    |
+| TaskOTAHandler     | Low      | Handles OTA updates    |
 
 ---
 
 # Communication Interfaces
 
-| Interface | Usage |
-|---|---|
-| Bluetooth | Rover control |
-| Wi-Fi | Cloud connectivity |
-| UART | GPS communication |
-| I2C | Environmental sensors |
-| PWM | Motor & servo control |
-| ADC | Gas sensor & battery monitoring |
+| Interface         | Usage                    |
+| ----------------- | ------------------------ |
+| Bluetooth Classic | Rover control            |
+| Wi‑Fi             | IoT connectivity         |
+| UART              | GPS communication        |
+| I2C               | Sensor communication     |
+| PWM               | Motor control            |
+| ADC               | Gas & battery monitoring |
 
 ---
 
@@ -206,18 +222,18 @@ The platform is designed using modern embedded engineering practices including:
 intelligent-rover/
 │
 ├── .github/                  # CI/CD workflows
-├── .vscode/                  # VS Code settings
+├── .vscode/                  # VS Code workspace settings
 ├── docs/                     # Technical documentation
 ├── firmware/
 │   ├── shared/               # Shared libraries
-│   ├── main-controller/      # Main ESP32-S3 firmware
-│   ├── ai-camera/            # AI camera firmware
-│   └── tools/                # Firmware utilities
-├── cloud/                    # Cloud services
+│   ├── main-controller/      # ESP32 rover controller firmware
+│   ├── ai-camera/            # ESP32-S3 AI camera firmware
+│   └── tools/                # Development utilities
+├── cloud/                    # Cloud services & integrations
 ├── ai/                       # AI models & datasets
-├── hardware/                 # PCB, schematics, CAD
-├── scripts/                  # Build automation
-├── assets/                   # Media & renders
+├── hardware/                 # PCB, schematics & CAD files
+├── scripts/                  # Build & automation scripts
+├── assets/                   # Images & media assets
 └── README.md
 ```
 
@@ -225,33 +241,33 @@ intelligent-rover/
 
 # Hardware Stack
 
-| Component | Function |
-|---|---|
-| ESP32-S3 | Main embedded controller |
-| ESP32-S3 CAM | AI vision processing |
-| BTS7960 | Motor driver |
-| BME280 | Environmental sensing |
-| MQ-135 | Air quality sensing |
-| GPS Module | Location tracking |
-| MG996R | Camera/sensor positioning |
-| Li-Ion Battery Pack | Portable power |
+| Component           | Function                  |
+| ------------------- | ------------------------- |
+| ESP32               | Main rover controller     |
+| ESP32-S3 CAM        | AI vision processing      |
+| BTS7960             | Motor driver              |
+| BME280              | Environmental sensing     |
+| MQ135               | Gas & air quality sensing |
+| GPS Module          | Position tracking         |
+| Li-Ion Battery Pack | Portable power system     |
+| MG996R Servo        | Camera/sensor positioning |
 
 ---
 
 # Development Environment
 
-| Tool | Role |
-|---|---|
-| Visual Studio Code | IDE |
-| PlatformIO | Build system |
-| Arduino Framework | ESP32 firmware framework |
-| FreeRTOS | Multitasking kernel |
-| GitHub | Version control |
-| ThingSpeak | IoT telemetry platform |
+| Tool               | Role                     |
+| ------------------ | ------------------------ |
+| Visual Studio Code | IDE                      |
+| PlatformIO         | Embedded build system    |
+| Arduino Framework  | Firmware framework       |
+| FreeRTOS           | RTOS scheduler           |
+| GitHub             | Version control          |
+| ThingSpeak         | Cloud telemetry platform |
 
 ---
 
-# Build & Flash
+# Build & Deployment
 
 ## Clone Repository
 
@@ -262,7 +278,7 @@ cd intelligent-rover
 
 ---
 
-## Build Main Controller
+## Build Main Controller Firmware
 
 ```bash
 cd firmware/main-controller
@@ -279,7 +295,7 @@ pio run --target upload
 
 ---
 
-## Serial Monitor
+## Open Serial Monitor
 
 ```bash
 pio device monitor
@@ -287,14 +303,19 @@ pio device monitor
 
 ---
 
-# OTA Firmware Support
+# OTA Firmware Updates
 
-The platform supports secure OTA firmware updates for:
+The Intelligent Rover platform supports OTA firmware updates for:
 
-- Main controller firmware
-- AI camera firmware
+* ESP32 main controller
+* ESP32-S3 AI camera node
 
-OTA deployment architecture enables remote firmware lifecycle management without physical USB access.
+OTA deployment enables:
+
+* Remote firmware maintenance
+* Wireless feature updates
+* Distributed node management
+* Reduced physical maintenance requirements
 
 ---
 
@@ -321,46 +342,57 @@ OTA deployment architecture enables remote firmware lifecycle management without
 
 ## Phase 1 — Core Rover Platform
 
-- Manual Bluetooth control
-- Sensor telemetry
-- GPS integration
-- ThingSpeak cloud upload
+* Bluetooth rover control
+* Motor driver integration
+* Sensor telemetry
+* GPS integration
+* RTOS architecture
 
-## Phase 2 — AI Vision Integration
+## Phase 2 — Cloud & OTA Infrastructure
 
-- Live streaming
-- Object detection
-- Remote monitoring
+* Wi‑Fi integration
+* ThingSpeak telemetry upload
+* OTA firmware updates
+* Remote diagnostics
 
-## Phase 3 — Advanced Edge Intelligence
+## Phase 3 — AI Vision Integration
 
-- TinyML optimization
-- AI event analytics
-- Autonomous assistance
-- Hazard recognition
+* Live camera streaming
+* Object detection
+* AI event publishing
+* Remote monitoring
+
+## Phase 4 — Advanced Robotics
+
+* Autonomous navigation
+* TinyML optimization
+* Hazard recognition
+* Edge intelligence
+* Multi-node coordination
 
 ---
 
 # Security Considerations
 
-- OTA authentication
-- API key isolation
-- Secrets abstraction
-- Secure Wi-Fi credential storage
-- Cloud token separation
+* OTA authentication
+* Wi‑Fi credential isolation
+* API key abstraction
+* Secure cloud communication
+* Secrets management
+* Modular credential storage
 
 ---
 
 # Future Expansion
 
-- Autonomous navigation
-- SLAM mapping
-- ROS2 bridge
-- MQTT infrastructure
-- LoRa telemetry
-- Edge TPU acceleration
-- Web dashboard
-- Multi-rover fleet support
+* SLAM mapping
+* ROS2 bridge
+* MQTT infrastructure
+* LoRa telemetry
+* Web dashboard
+* Multi-rover fleet management
+* Autonomous patrol mode
+* Edge TPU acceleration
 
 ---
 
@@ -370,20 +402,14 @@ MIT License
 
 ---
 
-# Author
-
-Intelligent Rover Project
-
----
-
 # Disclaimer
 
 This platform is intended for:
 
-- Robotics research
-- Embedded systems development
-- Environmental monitoring
-- AI experimentation
-- Educational engineering applications
+* Embedded systems engineering
+* Robotics research
+* Environmental monitoring
+* AI experimentation
+* Educational and industrial prototyping
 
-Use responsibly and comply with local regulations for remote monitoring and wireless communication systems.
+Users are responsible for ensuring compliance with local laws and regulations regarding wireless communication, remote monitoring, and autonomous systems.

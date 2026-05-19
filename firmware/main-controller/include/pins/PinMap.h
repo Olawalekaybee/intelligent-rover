@@ -1,33 +1,35 @@
 #pragma once
 
-// I2C
-#define PIN_I2C_SDA 8
-#define PIN_I2C_SCL 9
+// I2C - ESP32 default I2C pins
+#define PIN_I2C_SDA 21
+#define PIN_I2C_SCL 22
 
-// GPS UART
+// GPS UART2
 #define PIN_GPS_RX 16
 #define PIN_GPS_TX 17
 
-// MQ-135
-#define PIN_MQ135_ADC 4
+// MQ-135 analog input
+// GPIO34 is input-only and ADC-capable
+#define PIN_MQ135_ADC 34
 
-// Servo
-#define PIN_SERVO 18
+// Servo PWM
+#define PIN_SERVO 23
 
-// Left Motor Driver
-#define PIN_LEFT_LPWM 10
-#define PIN_LEFT_RPWM 11
-#define PIN_LEFT_LEN 14
-#define PIN_LEFT_REN 15
+// Left BTS7960 motor driver
+#define PIN_LEFT_LPWM 25
+#define PIN_LEFT_RPWM 26
+#define PIN_LEFT_LEN  33
+#define PIN_LEFT_REN  32
 
-// Right Motor Driver
-#define PIN_RIGHT_LPWM 12
-#define PIN_RIGHT_RPWM 13
-#define PIN_RIGHT_LEN 6
-#define PIN_RIGHT_REN 7
+// Right BTS7960 motor driver
+#define PIN_RIGHT_LPWM 27
+#define PIN_RIGHT_RPWM 14
+#define PIN_RIGHT_LEN  18
+#define PIN_RIGHT_REN  19
 
-// Battery Monitor
-#define PIN_BATTERY_ADC 5
+// Battery voltage monitor
+// GPIO35 is input-only and ADC-capable
+#define PIN_BATTERY_ADC 35
 
 // Status LED
 #define PIN_STATUS_LED 2
